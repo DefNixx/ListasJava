@@ -1,27 +1,14 @@
 /*Atividade Avaliativa de Programação Orientada a Objetos 
-criando lista sem duplicatas em java, sem utilizar streams api
+criando lista sem duplicatas em java, utilizando streams api e não utilizando
 @authors Nícolas André & Jefferson Eduardo */
 
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main 
 {  
-    //Declaração de método recebendo tipo genérico com loop pra identificar elementos duplicados
-    public static <T> List<T> removerDuplicatas(List<T> lista) 
-    {
-        List<T> listaSemDuplicatas = new ArrayList<>();
-        for (T elemento : lista) 
-        {
-            if (!listaSemDuplicatas.contains(elemento)) 
-            {
-                listaSemDuplicatas.add(elemento);
-            }
-        }
-        return listaSemDuplicatas;
-    }
-
     public static void main(String[] args) 
     {
         //Declaração de lista com duplicatas propositais para teste. 
@@ -33,7 +20,7 @@ public class Main
         lista.add("Tractatus");
         lista.add("As dores do mundo");
 
-        List<String> listaSemDuplicatas = removerDuplicatas(lista);
+        List<String> listaSemDuplicatas = lista.stream().distinct().collect(Collectors.toList());
         System.out.println(listaSemDuplicatas);
     }
 }
