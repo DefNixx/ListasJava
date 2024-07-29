@@ -1,5 +1,5 @@
 /*Atividade Avaliativa de Programação Orientada a Objetos 
-criando lista sem duplicatas em java, utilizando streams api e não utilizando
+criando lista sem duplicatas em java, utilizando streams api 
 @authors Nícolas André & Jefferson Eduardo */
 
 
